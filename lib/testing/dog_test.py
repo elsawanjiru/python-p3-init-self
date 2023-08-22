@@ -5,23 +5,23 @@ from dog import Dog
 class TestDog:
     '''Dog in dog.py'''
 
-    def test_is_class(self):
-        '''is a class with the name "Dog"'''
-        fido = Dog("Fido")
-        assert(type(fido) == Dog)
+def test_is_class():
+    '''is a class with the name "Dog"'''
+    fido = Dog("Fido", "Dalmatian")  # Provide both name and breed when creating the Dog instance
+    assert isinstance(fido, Dog)
 
 class TestInit:
     '''Dog.__init__ in dog.py'''
 
-    def test_saves_self_name(self):
-        '''takes a name as an argument and saves it to self.name'''
-        fido = Dog("Fido")
-        assert(fido.name == "Fido")
+def test_saves_self_name():
+    '''takes a name as an argument and saves it to self.name'''
+    fido = Dog("Fido", "Dalmatian")  # Provide both name and breed when creating the Dog instance
+    assert fido.name == "Fido"
 
-    def test_saves_self_breed(self):
-        '''takes a breed as an argument and saves it to self.breed'''
-        fido = Dog("Fido", "Dalmatian")
-        assert(fido.breed == "Dalmatian")
+def test_saves_self_breed():
+    '''takes a breed as an argument and saves it to self.breed'''
+    fido = Dog("Fido", "Dalmatian")
+    assert fido.breed == "Dalmatian"
 
     def test_default_breed(self):
         '''sets self.breed = "Mutt" when no breed specified'''
